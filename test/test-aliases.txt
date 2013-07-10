@@ -1,0 +1,47 @@
+a1	(a2 -l)
+a2	du
+allargs	(echo !*)
+allbutlastarg	(echo !:1-)
+onepipeanother  one | another
+cdls	cd !* && ls
+commandandallbutlastarg	(echo !:0-)
+echospaces	(echo "a b c")
+firstarg	(echo !:1)
+firstthenlast	reallyecho !:1 ; reallyecho !$
+echoeverything	(echo !#)
+l.	ls -d .* --color=tty
+lastarg	(echo !$)
+ll	ls -l --color=tty
+lnd	ls -l | grep -v ^d
+lookup	(grep !:1 /etc/passwd)
+ls	ls --color=tty
+reallyecho	echo
+reallypwd	pwd
+savels	ls -l >&!:1
+secondandthird	(echo !:2-3)
+secondarg	(echo !:2)
+setcurrent	set current=`reallypwd`
+thisandthat	echo !:1 && echo !:2
+thisorthat	echo !:1 || echo !:2
+twice	(echo !:1 !:1)
+twicenewline	echo !:1 ; echo !:1
+vi	vim
+wholecommand	(echo !!)
+wholecommand2	(echo !#)
+outtopipe       first !:1 | second
+alltopipe       first !:1 |& second
+appendtofile	(sh -c 'echo !* >>/dev/null')
+subinbacktick   first `second !*`
+two             echo !:2
+twostar         echo !:2*
+twostaralt      echo !:2-$
+twolast         (echo !:2 and !$)
+begintoend      (echo !^-$)
+begintoendalt   (echo !:^-$)
+a               (b !:1 && c !:2)
+b               (echo this is b !*)
+c               (echo this is c !*)
+b1              b2
+b2              echo !:2 ; b4
+b4              echo This is b4
+b3              (echo !:2 ; echo Some text !:1)
