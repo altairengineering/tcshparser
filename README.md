@@ -1,5 +1,5 @@
-tcsh-alias-expander
-===================
+tcshParser
+==========
 
 This program simulates the way in which aliases are expanded by
 tcsh. It is modelled on a Java program which has been a part of
